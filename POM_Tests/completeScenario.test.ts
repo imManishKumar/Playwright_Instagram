@@ -3,8 +3,8 @@ import LoginPage from '../pages/loginPage'
 import HomePage from '../pages/homePage'
 import ProfilePage from '../pages/profilePage'
 
-const username = "legal.machine.almanack"
-const password = "Almanack@123"
+const username = ""
+const password = ""
 
 test('Scenario for Sending message to profile',async({page,baseURL})=>{
     const loginPage = new LoginPage(page)
