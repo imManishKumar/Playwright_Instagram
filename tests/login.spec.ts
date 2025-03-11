@@ -6,8 +6,8 @@ test('demo', async ()=>{
     const page = await context.newPage();
 
     await page.goto("https://www.instagram.com/")
-    await page.fill("//input[@name='username']", "legal.machine.almanack")
-    await page.fill("//input[@name='password']", "Almanack@123")
+    await page.fill("//input[@name='username']", "")
+    await page.fill("//input[@name='password']", "")
     await page.locator("//button[@type='submit']").click()
 
     // await page.locator("//span[text()='Search']").click()
