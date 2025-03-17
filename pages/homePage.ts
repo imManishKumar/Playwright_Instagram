@@ -4,21 +4,20 @@ export default class HomePage{
     constructor(public page:Page){}
 
     async clickOnSearch(){
-        await this.page.locator("//span[text()='Search']")
-                        .click()
+        const searchBtn = await this.page.locator("//span[text()='Search']")
+        await searchBtn.click()
     }
 
     async enterTextInSearchField(profile:string){
-        await this.page.getByPlaceholder("Search")
-                        .fill(profile)
+        await this.page.locator("input[placeholder='Search']").fill(profile)
     }
 
     async clickOnProfile(){
         await this.page.getByAltText("virat.kohli's profile picture")
-                        .click()
+                        .click({timeout:10000})
     }
     async checkProfileDisplayed(){
         await this.page.locator("//span[text()='virat.kohli']")
-                        .isVisible()
+                        .isVisible({timeout:10000})
     }
 }

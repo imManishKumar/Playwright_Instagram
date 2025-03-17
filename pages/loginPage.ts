@@ -15,9 +15,15 @@ export default class LoginPage{
     async clickLoginButton(){
         await this.page.locator("//button[@type='submit']")
                         .click()
+                        // await Promise.all([
+                        
+                        //     this.page.locator("//button[@type='submit']").click()
+                        // ]);
     }
 
     async checkLoginSuccessful(){
-        await expect(this.page.locator("//span[text()='Home']")).toBeVisible()  
+        await this.page.waitForTimeout(5000)
+        const homeBtn = await this.page.locator("//span[text()='Home']")
+        await expect(homeBtn).toBeVisible({timeout:10000})  
     }
 }

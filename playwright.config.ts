@@ -1,8 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './POM_Tests',
-
+  // testDir: './POM_Tests',
+  testDir: './tests',
   
   reporter: 'html',
  
